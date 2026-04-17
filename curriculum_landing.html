@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedBridge Pre-Med Program — 커리큘럼 안내</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:  #0B1F3A;
+  --navy2: #0D2545;
+  --navy3: #0e2844;
+  --gold:  #C8A96E;
+  --gold2: #E2C68A;
+  --gold3: #8a6a3a;
+  --wht:   #EEF2F8;
+  --dim:   #8aabcc;
+  --dim2:  #6a8baa;
+  --dim3:  #4a6a8a;
+  --line:  #1a3254;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--wht);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;max-width:860px;margin:0 auto}
+
+/* ── HEADER ── */
+header{border-bottom:1px solid var(--line);padding:18px 0;position:sticky;top:0;background:var(--navy);z-index:100}
+.header-inner{max-width:860px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--gold);letter-spacing:.08em;text-decoration:none}
+.logo span{color:var(--dim2);font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:400;margin-left:10px;letter-spacing:.04em}
+.header-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-size:13px;font-weight:900;letter-spacing:.03em;padding:9px 18px;border-radius:4px;text-decoration:none}
+.kakao-xs{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:#FEE500;border-radius:4px;flex-shrink:0}
+
+/* ── HERO ── */
+.hero{max-width:860px;margin:0 auto;padding:64px 32px 48px;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:64px;background:var(--gold);opacity:.25}
+.hero-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--navy);background:var(--gold);padding:4px 14px;border-radius:2px;margin-bottom:22px;text-transform:uppercase}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(30px,5vw,50px);color:var(--gold);line-height:1.1;letter-spacing:.02em;margin-bottom:14px}
+.hero-sub{font-family:'Noto Serif KR',serif;font-size:17px;font-weight:400;color:var(--dim);line-height:1.7;max-width:520px;margin:0 auto 28px}
+.hero-sub em{font-style:normal;color:var(--wht)}
+.hero-pills{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.hero-pill{font-size:12px;color:var(--dim2);background:var(--navy2);border:1px solid var(--line);padding:5px 14px;border-radius:20px}
+
+/* ── PAGE WRAP ── */
+.page{max-width:860px;margin:0 auto;padding:0 32px}
+.divider{height:1px;background:var(--line);margin:0 32px}
+
+/* ── SECTION LABEL ── */
+.sec{display:flex;align-items:center;gap:14px;padding:48px 0 28px}
+.sec::before,.sec::after{content:'';flex:1;height:1px;background:var(--line)}
+.sec span{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--dim3);text-transform:uppercase;white-space:nowrap}
+
+/* ── TRUST STRIP ── */
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:48px}
+.trust-item{background:var(--navy2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:4px;padding:16px 18px;display:flex;align-items:flex-start;gap:10px}
+.ti-icon{color:var(--gold);font-size:9px;margin-top:5px;flex-shrink:0}
+.ti-text{font-size:13px;color:var(--dim);line-height:1.7}
+.ti-text em{font-style:normal;font-weight:700;color:var(--wht)}
+
+/* ── WHY BOX ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:48px}
+.why-col{background:var(--navy2);padding:24px 22px}
+.why-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.why-label.bad{color:var(--dim3)}
+.why-label.good{color:var(--gold)}
+.why-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.why-list li{font-size:13px;color:var(--dim);padding-left:18px;position:relative;line-height:1.55}
+.why-list li::before{position:absolute;left:0;top:1px;font-size:11px}
+.why-list.bad li::before{content:'✕';color:var(--dim3)}
+.why-list.good li::before{content:'✓';color:var(--gold)}
+.why-list.good li{color:var(--wht)}
+
+/* ── OVERVIEW GRID ── */
+.overview-grid{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:0;margin-bottom:16px}
+.ov-card{background:var(--navy2);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:4px;padding:22px 18px}
+.ov-stage{font-size:9px;font-weight:700;letter-spacing:.16em;color:var(--gold3);text-transform:uppercase;margin-bottom:4px}
+.ov-code{font-size:12px;color:var(--dim2);margin-bottom:3px}
+.ov-code span{font-weight:900;color:var(--gold);font-size:14px}
+.ov-title{font-family:'DM Serif Display',serif;font-size:17px;color:var(--wht);line-height:1.25;margin-bottom:8px}
+.ov-dur{font-size:11px;color:var(--dim3);border-top:1px solid var(--line);padding-top:8px}
+.ov-entry{display:inline-block;margin-top:6px;font-size:10px;font-weight:700;color:var(--navy);background:var(--gold3);padding:2px 8px;border-radius:2px}
+.ov-arrow{display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--line)}
+
+/* ── STAGE DETAIL ── */
+.stage-card{background:var(--navy2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:4px;overflow:hidden;margin-bottom:16px}
+.stage-hd{display:flex;align-items:stretch;border-bottom:1px solid var(--line)}
+.stage-num{font-family:'DM Serif Display',serif;font-size:36px;color:var(--gold);writing-mode:vertical-rl;padding:18px 14px;border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;letter-spacing:.08em}
+.stage-ht{padding:18px 22px;flex:1}
+.stage-tag{font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--gold3);text-transform:uppercase;margin-bottom:4px}
+.stage-name{font-family:'DM Serif Display',serif;font-size:22px;color:var(--wht);line-height:1.2;margin-bottom:6px}
+.stage-desc{font-size:13px;color:var(--dim);line-height:1.65}
+.stage-meta{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap}
+.sm-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--dim3)}
+.sm-item strong{color:var(--dim)}
+.sm-dot{width:3px;height:3px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+.stage-bd{display:grid;grid-template-columns:56% 44%;border-top:1px solid var(--line)}
+.stage-focus{padding:22px 24px;border-right:1px solid var(--line)}
+.stage-sample{padding:22px 20px}
+.col-ttl{font-size:9px;font-weight:700;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.focus-ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.focus-ul li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--dim);line-height:1.65}
+.focus-ul li .arrow{color:var(--gold);font-size:11px;margin-top:4px;flex-shrink:0;min-width:10px}
+.focus-ul li strong{color:var(--wht);font-weight:700}
+.sample-ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.sample-ul li{font-size:12.5px;color:var(--dim2);background:var(--navy3);border:1px solid var(--line);border-left:2px solid var(--gold3);border-radius:3px;padding:8px 12px;font-style:italic;line-height:1.55}
+.stage-note-bar{padding:10px 24px;background:var(--navy3);border-top:1px solid var(--line);font-size:11.5px;color:var(--dim3)}
+
+/* ── FLEXIBLE NOTICE ── */
+.notice-box{background:var(--navy2);border:1px solid var(--gold3);border-left:3px solid var(--gold);border-radius:4px;padding:18px 20px;margin-bottom:16px}
+.notice-tag{font-size:9px;font-weight:700;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.notice-box p{font-size:13px;color:var(--dim);line-height:1.75}
+.notice-box p strong{color:var(--wht)}
+
+/* ── ELITE ── */
+.elite-card{background:var(--navy2);border:2px solid var(--gold);border-radius:4px;overflow:hidden;position:relative;margin-bottom:48px}
+.elite-tag{position:absolute;top:0;right:0;font-size:9px;letter-spacing:.18em;text-transform:uppercase;background:var(--gold);color:var(--navy);padding:4px 12px;font-weight:700}
+.elite-hd{display:flex;align-items:stretch;border-bottom:1px solid var(--line)}
+.elite-num{min-width:70px;background:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 0;text-align:center}
+.elite-num span{font-size:12px;font-weight:900;color:var(--navy);letter-spacing:.08em;line-height:1}
+.elite-num small{font-size:9px;color:rgba(11,31,58,.6);margin-top:4px;letter-spacing:.1em;text-transform:uppercase}
+.elite-ht{flex:1;padding:16px 20px;border-left:1px solid var(--line)}
+.elite-name{font-family:'DM Serif Display',serif;font-size:20px;color:var(--wht);margin-bottom:4px}
+.elite-sub{font-size:12px;color:var(--gold);letter-spacing:.04em}
+.elite-chip{display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;padding:2px 10px;border-radius:2px;margin-top:6px}
+.elite-bd{padding:22px 28px}
+.elite-bd .focus-ul li{font-size:13.5px;line-height:1.7}
+
+/* ── PATHWAY ── */
+.pathway{display:flex;flex-direction:column;gap:0;margin-bottom:48px}
+.pw-step{display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--navy2);border:1px solid var(--line);border-radius:4px;margin-bottom:2px}
+.pw-step.active{border-color:var(--gold);background:var(--navy3)}
+.pw-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--navy);background:var(--dim3);flex-shrink:0}
+.pw-dot.d1{background:#1A6B6B}.pw-dot.d2{background:#2E5F8A}.pw-dot.d3{background:#6B3A7A}.pw-dot.d4{background:var(--gold)}
+.pw-text .pt{font-size:13px;font-weight:700;color:var(--wht)}
+.pw-text .ps{font-size:11px;color:var(--dim2);margin-top:2px}
+.pw-arrow{text-align:left;padding:3px 0 3px 22px;font-size:13px;color:var(--dim3)}
+
+/* ── COURSE OPTIONS ── */
+.opt-list{display:flex;flex-direction:column;gap:8px;margin-bottom:48px}
+.opt-row{display:flex;align-items:center;gap:16px;background:var(--navy2);border:1px solid var(--line);border-radius:4px;padding:14px 18px;position:relative}
+.opt-row.rec{border-color:var(--gold)}
+.rec-badge{position:absolute;top:-1px;right:-1px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--navy);padding:3px 10px;font-weight:700;border-radius:0 4px 0 3px}
+.opt-tier{min-width:86px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.opt-vline{width:1px;height:32px;background:var(--line)}
+.opt-count{font-size:18px;font-weight:900;color:var(--wht);line-height:1.2}
+.opt-freq{font-size:12px;color:var(--dim2);margin-top:2px}
+
+/* ── HOW IT WORKS ── */
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:48px}
+.how-item{background:var(--navy2);padding:22px 18px;text-align:center}
+.how-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--gold);margin-bottom:8px;line-height:1}
+.how-lbl{font-size:13px;font-weight:700;color:var(--wht);margin-bottom:5px}
+.how-desc{font-size:12px;color:var(--dim2);line-height:1.6}
+
+/* ── CTA KAKAO ── */
+.cta-kakao{background:var(--navy2);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:6px;margin-bottom:16px;overflow:hidden}
+.cta-kakao-inner{display:flex;align-items:center;gap:32px;padding:32px 40px}
+.cta-kakao-left{flex:1}
+.cta-kakao-right{flex-shrink:0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.kakao-badge-lg{width:56px;height:56px;background:#FEE500;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.btn-kakao-lg{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:var(--navy);font-size:16px;font-weight:900;letter-spacing:.03em;padding:15px 28px;border-radius:4px;text-decoration:none;white-space:nowrap}
+
+/* ── CTA TRIAL ── */
+.cta-trial{background:#0a1e36;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;margin-bottom:56px;overflow:hidden}
+.cta-trial-inner{display:flex;align-items:center;gap:32px;padding:28px 40px}
+.cta-trial-left{flex:1}
+.cta-trial-right{flex-shrink:0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.trial-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:900;letter-spacing:.12em;padding:4px 12px;border-radius:2px;margin-bottom:8px;text-transform:uppercase}
+.trial-title{font-family:'DM Serif Display',serif;font-size:20px;color:var(--wht);line-height:1.35;margin-bottom:14px}
+.trial-title em{font-style:normal;color:var(--gold)}
+.trial-steps{display:flex;flex-direction:column;gap:8px}
+.trial-step{display:flex;align-items:center;gap:10px}
+.ts-num{width:22px;height:22px;border-radius:50%;background:var(--navy3);border:1px solid var(--gold3);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--gold);flex-shrink:0}
+.ts-text{font-size:13px;color:var(--dim)}
+.ts-text strong{color:var(--wht);font-weight:700}
+.trial-limit{font-size:12px;color:var(--dim2)}
+.trial-limit strong{color:var(--gold)}
+.btn-trial-lg{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--gold);color:var(--gold);font-size:15px;font-weight:700;letter-spacing:.03em;padding:14px 24px;border-radius:4px;text-decoration:none;white-space:nowrap}
+
+/* ── CTA BLOCK (legacy) ── */
+.cta-block{background:var(--navy2);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:6px;padding:40px 40px 36px;text-align:center;margin-bottom:56px}
+.cta-ey{font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.cta-ttl{font-family:'DM Serif Display',serif;font-size:26px;color:var(--wht);line-height:1.3;margin-bottom:8px}
+.cta-sub{font-size:13px;color:var(--dim);margin-bottom:0;line-height:1.75}
+.cta-note{font-size:11px;color:var(--dim3)}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--line);padding:28px 32px;text-align:center}
+.ft-brand{font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold);letter-spacing:.1em;margin-bottom:6px}
+.ft-tag{font-size:11px;color:var(--dim3);letter-spacing:.06em}
+
+@media(max-width:640px){
+  /* 전체 레이아웃 */
+  body{font-size:14px}
+  .page{padding:0 16px}
+  .divider{margin:0 16px}
+
+  /* 헤더 */
+  .header-inner{padding:0 16px;gap:10px}
+  .logo span{display:none}
+  .header-cta{font-size:12px;padding:8px 12px}
+
+  /* 히어로 */
+  .hero{padding:40px 16px 32px}
+  .hero-title{font-size:28px}
+  .hero-sub{font-size:15px}
+  .hero-pills{gap:6px}
+  .hero-pill{font-size:11px;padding:4px 10px}
+
+  /* 그리드 레이아웃 단일 컬럼 */
+  .stage-bd,.why-grid,.trust-grid,.overview-grid{grid-template-columns:1fr}
+  .ov-arrow{display:none}
+  .stage-focus{border-right:none;border-bottom:1px solid var(--line)}
+  .how-grid{grid-template-columns:1fr 1fr}
+
+  /* 섹션 */
+  .sec{padding:32px 0 20px}
+
+  /* Stage 헤더 */
+  .stage-num{writing-mode:horizontal-tb;padding:14px 16px;font-size:22px;border-right:none;border-bottom:1px solid var(--line)}
+  .stage-hd{flex-direction:column}
+  .stage-ht{padding:14px 16px}
+  .stage-name{font-size:18px}
+  .stage-meta{gap:10px}
+  .stage-focus,.stage-sample{padding:16px}
+
+  /* Elite */
+  .elite-hd{flex-direction:column}
+  .elite-num{flex-direction:row;gap:10px;padding:14px 16px;min-width:auto;justify-content:flex-start;border-right:none;border-bottom:1px solid var(--line)}
+  .elite-ht{padding:14px 16px}
+  .elite-bd{padding:16px}
+
+  /* Overview cards */
+  .overview-grid{display:flex;flex-direction:column;gap:8px}
+  .ov-card{padding:16px}
+
+  /* How it works */
+  .how-grid{grid-template-columns:1fr 1fr}
+  .how-item{padding:16px 12px}
+  .how-num{font-size:22px}
+
+  /* Course options */
+  .opt-row{flex-wrap:wrap;gap:10px}
+
+  /* ── CTA 카카오 ── */
+  .cta-kakao{margin-bottom:12px}
+  .cta-kakao-inner{
+    flex-direction:column;
+    padding:24px 20px;
+    gap:16px;
+    text-align:center;
+    align-items:stretch;
+  }
+  .cta-kakao-left{text-align:center}
+  .cta-ey{font-size:9px}
+  .cta-ttl{font-size:20px}
+  .cta-sub{font-size:13px}
+  .cta-kakao-right{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
+  }
+  .btn-kakao-lg{
+    width:100%;
+    white-space:normal;
+    text-align:center;
+    font-size:15px;
+    padding:15px 12px;
+    border-radius:4px;
+  }
+
+  /* ── CTA 무료 체험 ── */
+  .cta-trial{margin-bottom:40px}
+  .cta-trial-inner{
+    flex-direction:column;
+    padding:24px 20px;
+    gap:16px;
+    align-items:stretch;
+  }
+  .trial-badge{font-size:9px}
+  .trial-title{font-size:17px;margin-bottom:12px}
+  .cta-trial-right{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    text-align:center;
+  }
+  .btn-trial-lg{
+    width:100%;
+    white-space:normal;
+    text-align:center;
+    font-size:14px;
+    padding:14px 12px;
+  }
+
+  /* 푸터 */
+  footer{padding:20px 16px}
+  .ft-tag{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">MEDBRIDGE <span>Pre-Med Program</span></a>
+    <a class="header-cta" href="https://open.kakao.com/o/syKDYYni" target="_blank" rel="noopener">
+      <span class="kakao-xs">
+        <svg width="13" height="12" viewBox="0 0 18 17" fill="none"><ellipse cx="9" cy="7.5" rx="8.5" ry="6.5" fill="#1A1A1A"/><path d="M4.5 13.5 L6 10.8 Q9 13.2 13.5 10.8 L9 17 Z" fill="#1A1A1A"/></svg>
+      </span>
+      카카오톡 문의
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="page">
+  <div class="hero">
+    <div class="hero-tag">Program Curriculum</div>
+    <div class="hero-title">Speak Medicine.<br>From Day One.</div>
+    <p class="hero-sub">헝가리 의대 <em>구술 시험</em>을 위한<br>단계별 Medical English 프로그램</p>
+    <div class="hero-pills">
+      <span class="hero-pill">3 Stages</span>
+      <span class="hero-pill">9 Months</span>
+      <span class="hero-pill">ZOOM 1:1 실시간</span>
+      <span class="hero-pill">2024.12~ 연속 수강 중</span>
+      <span class="hero-pill">셈멜바이스·세게드·페치·헝가리 수의대 합격생 배출</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="page">
+
+  <!-- WHY MEDBRIDGE -->
+  <div class="sec"><span>Why MedBridge</span></div>
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="why-label bad">기존 영어 프로그램</div>
+      <ul class="why-list bad">
+        <li><span class="arrow">▸</span><span>일반 영어 회화 중심</span></li>
+        <li><span class="arrow">▸</span><span>IELTS / TOEFL 시험 대비</span></li>
+        <li><span class="arrow">▸</span><span>의학 개념 설명 훈련 없음</span></li>
+        <li><span class="arrow">▸</span><span>Oral exam 구조 훈련 없음</span></li>
+      </ul>
+    </div>
+    <div class="why-col">
+      <div class="why-label good">MedBridge</div>
+      <ul class="why-list good">
+        <li><span class="arrow">▸</span><span>Medical communication 전문 훈련</span></li>
+        <li><span class="arrow">▸</span><span>헝가리 의대 구술 시험 집중 대비</span></li>
+        <li><span class="arrow">▸</span><span>과학 개념 영어 설명 체계화</span></li>
+        <li><span class="arrow">▸</span><span>입학 전 1년이 6년을 결정합니다</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trust-grid">
+    <div class="trust-item">
+      <span class="ti-icon">✦</span>
+      <div class="ti-text">2024년 12월부터 <em>단 한 달도 빠짐없이</em> 프리메드 학생들이 선택해온 프로그램</div>
+    </div>
+    <div class="trust-item">
+      <span class="ti-icon">✦</span>
+      <div class="ti-text">2025년부터 <em>셈멜바이스 · 세게드 · 페치 · 헝가리 수의대</em> 합격생 배출</div>
+    </div>
+    <div class="trust-item">
+      <span class="ti-icon">✦</span>
+      <div class="ti-text">단순 암기가 아닌 <em>실제 구술 시험 환경</em>과 동일한 방식으로 훈련</div>
+    </div>
+    <div class="trust-item">
+      <span class="ti-icon">✦</span>
+      <div class="ti-text">응답 후 <em>24시간 이내</em> 카카오톡으로 맞춤 피드백 제공</div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="sec"><span>Program Overview</span></div>
+  <div class="overview-grid" style="margin-bottom:48px">
+    <div class="ov-card">
+      <div class="ov-stage">Stage I</div>
+      <div class="ov-code">MedBridge <span>101</span></div>
+      <div class="ov-title">Communication<br>Foundation</div>
+      <div class="ov-dur">3개월 · Entry Level</div>
+      <div class="ov-entry">입학 준비생 누구나</div>
+    </div>
+    <div class="ov-arrow">→</div>
+    <div class="ov-card">
+      <div class="ov-stage">Stage II</div>
+      <div class="ov-code">MedBridge <span>201</span></div>
+      <div class="ov-title">Scientific<br>Communication</div>
+      <div class="ov-dur">3개월 · Intermediate</div>
+      <div class="ov-entry">101 수료 후</div>
+    </div>
+    <div class="ov-arrow">→</div>
+    <div class="ov-card">
+      <div class="ov-stage">Stage III</div>
+      <div class="ov-code">MedBridge <span>301</span></div>
+      <div class="ov-title">Oral Exam<br>Preparation</div>
+      <div class="ov-dur">3개월 · Advanced</div>
+      <div class="ov-entry">201 수료 후</div>
+    </div>
+  </div>
+
+  <!-- STAGE 101 -->
+  <div class="sec"><span>Stage Detail</span></div>
+  <div class="stage-card">
+    <div class="stage-hd">
+      <div class="stage-num">101</div>
+      <div class="stage-ht">
+        <div class="stage-tag">Stage I · 3 Months · Entry Level</div>
+        <div class="stage-name">Communication Foundation</div>
+        <p class="stage-desc">단어를 나열하는 것이 아닌, 논리적인 문장으로 말하는 능력을 만드는 단계입니다. 의학 영어의 기본 구조와 어휘를 실제 말하기 맥락 속에서 익힙니다.</p>
+        <div class="stage-meta">
+          <div class="sm-item"><span class="sm-dot"></span><strong>대상</strong>&nbsp;입학 준비생 누구나</div>
+          <div class="sm-item"><span class="sm-dot"></span><strong>방식</strong>&nbsp;ZOOM 1:1 실시간</div>
+          <div class="sm-item"><span class="sm-dot"></span><strong>기간</strong>&nbsp;3개월</div>
+        </div>
+      </div>
+    </div>
+    <div class="stage-bd">
+      <div class="stage-focus">
+        <div class="col-ttl">Focus</div>
+        <ul class="focus-ul">
+          <li><span class="arrow">▸</span><span>건강·의학 뉴스 기사를 읽고 <strong>영어로 의견 말하기</strong></span></li>
+          <li><span class="arrow">▸</span><span>의학 용어 발음 교정 — <strong>circulatory, respiratory, endocrine</strong> 등</span></li>
+          <li><span class="arrow">▸</span><span>토론형 질문에 <strong>구조적으로 답변하는 훈련</strong> (comprehension + opinion)</span></li>
+          <li><span class="arrow">▸</span><span>의대 면접 대비 스피킹 — <strong>"Why do you want to study medicine?"</strong></span></li>
+        </ul>
+      </div>
+      <div class="stage-sample">
+        <div class="col-ttl">수업 예시 주제</div>
+        <ul class="sample-ul">
+          <li><span class="arrow">▸</span><span>"Why do you want to study medicine?"</span></li>
+          <li><span class="arrow">▸</span><span>"Do you think doctors should discuss climate change with patients?"</span></li>
+          <li><span class="arrow">▸</span><span>"What are the risks of anaphylaxis, and how is it treated?"</span></li>
+          <li><span class="arrow">▸</span><span>"How do you handle challenging academic situations?"</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stage-note-bar">50분 · 온라인 1:1 수업 · 주 2–4회 선택 가능 · 고교생부터 수강 가능</div>
+  </div>
+
+  <!-- STAGE 201 -->
+  <div class="stage-card">
+    <div class="stage-hd">
+      <div class="stage-num">201</div>
+      <div class="stage-ht">
+        <div class="stage-tag">Stage II · 3 Months · After MedBridge 101</div>
+        <div class="stage-name">Scientific Communication</div>
+        <p class="stage-desc">생물학·의학 개념을 영어로 유창하게 설명하는 단계입니다. 과학적 사고력을 바탕으로 원인과 결과를 연결하고, 구조화된 방식으로 답변하는 능력을 기릅니다.</p>
+        <div class="stage-meta">
+          <div class="sm-item"><span class="sm-dot"></span><strong>대상</strong>&nbsp;MedBridge 101 수료생</div>
+          <div class="sm-item"><span class="sm-dot"></span><strong>방식</strong>&nbsp;ZOOM 1:1 실시간</div>
+          <div class="sm-item"><span class="sm-dot"></span><strong>기간</strong>&nbsp;3개월</div>
+        </div>
+      </div>
+    </div>
+    <div class="stage-bd">
+      <div class="stage-focus">
+        <div class="col-ttl">Focus</div>
+        <ul class="focus-ul">
+          <li><span class="arrow">▸</span><span>생물학·의학 개념을 <strong>영어로 유창하게 설명</strong></span></li>
+          <li><span class="arrow">▸</span><span>원인과 결과로 개념을 연결하는 <strong>과학적 사고력</strong></span></li>
+          <li><span class="arrow">▸</span><span><strong>정의 → 과정 → 기능 → 임상적 의미</strong> 구조적 답변</span></li>
+          <li><span class="arrow">▸</span><span>교수의 Follow-up 질문에 <strong>논리적으로 대응</strong>하는 훈련</span></li>
+        </ul>
+      </div>
+      <div class="stage-sample">
+        <div class="col-ttl">수업 예시 주제</div>
+        <ul class="sample-ul">
+          <li><span class="arrow">▸</span><span>"Explain the mechanism of enzyme inhibition."</span></li>
+          <li><span class="arrow">▸</span><span>"How does the immune system respond to infection?"</span></li>
+          <li><span class="arrow">▸</span><span>"Describe the process of DNA replication."</span></li>
+          <li><span class="arrow">▸</span><span>"What happens during an allergic reaction?"</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stage-note-bar">50분 · 온라인 1:1 수업 · 주 2–4회 선택 가능 · MedBridge 101 수료 후 진입</div>
+  </div>
+
+  <!-- STAGE 301 -->
+  <div class="stage-card" style="margin-bottom:16px">
+    <div class="stage-hd">
+      <div class="stage-num">301</div>
+      <div class="stage-ht">
+        <div class="stage-tag">Stage III · 3 Months · After MedBridge 201</div>
+        <div class="stage-name">Oral Exam Preparation</div>
+        <p class="stage-desc">실전 구술 시험과 동일한 환경에서 반복 훈련하는 단계입니다. 시험관의 시각으로 준비하며 유창성·자신감·정확성을 동시에 완성합니다.</p>
+        <div class="stage-meta">
+          <div class="sm-item"><span class="sm-dot"></span><strong>대상</strong>&nbsp;MedBridge 201 수료생</div>
+          <div class="sm-item"><span class="sm-dot"></span><strong>방식</strong>&nbsp;ZOOM 1:1 모의 구술</div>
+          <div class="sm-item"><span class="sm-dot"></span><strong>기간</strong>&nbsp;3개월</div>
+        </div>
+      </div>
+    </div>
+    <div class="stage-bd">
+      <div class="stage-focus">
+        <div class="col-ttl">Focus</div>
+        <ul class="focus-ul">
+          <li><span class="arrow">▸</span><span>실전 구술 모의고사 — <strong>30초 사고 → 2분 답변 → 추가 질문</strong></span></li>
+          <li><span class="arrow">▸</span><span>고빈도 주제 집중: <strong>pH·완충계, DNA/RNA, 항상성, 호르몬</strong></span></li>
+          <li><span class="arrow">▸</span><span>시험관 관점의 <strong>채점 기준</strong>으로 피드백</span></li>
+          <li><span class="arrow">▸</span><span>인터뷰 완성 — <strong>유창성, 자신감, 정확성</strong> 동시 훈련</span></li>
+        </ul>
+      </div>
+      <div class="stage-sample">
+        <div class="col-ttl">모의 구술 예시</div>
+        <ul class="sample-ul">
+          <li><span class="arrow">▸</span><span>"Explain the role of buffers in maintaining blood pH."</span></li>
+          <li><span class="arrow">▸</span><span>"Describe how hormones regulate blood glucose."</span></li>
+          <li><span class="arrow">▸</span><span>"What is homeostasis? Give an example."</span></li>
+          <li><span class="arrow">▸</span><span>"Explain the difference between DNA and RNA."</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stage-note-bar">50분 · 온라인 1:1 수업 · 주 2–4회 선택 가능 · MedBridge 201 수료 후 진입</div>
+  </div>
+
+  <!-- FLEXIBLE NOTICE -->
+  <div class="notice-box" style="margin-bottom:48px">
+    <div class="notice-tag">📌 고등학생 · Flexible Track 안내</div>
+    <p>시작 영어 수준에 따라 <strong>MedBridge 101을 3개월·6개월·최대 9개월까지 연장</strong> 운영합니다. 다음 Stage로의 진입은 획일적인 일정이 아닌 <strong>개인의 역량과 준비도</strong>를 기준으로 조정됩니다. 충분한 Communication foundation을 갖춘 후 MedBridge 201–301로 자연스럽게 이어집니다.</p>
+  </div>
+
+  <!-- ELITE -->
+  <div class="sec"><span>Premium Track</span></div>
+  <div class="elite-card">
+    <div class="elite-tag">PREMIUM</div>
+    <div class="elite-hd">
+      <div class="elite-num">
+        <span>ELITE</span>
+        <small>Premium</small>
+      </div>
+      <div class="elite-ht">
+        <div class="elite-name">MedBridge Elite</div>
+        <div class="elite-sub">Full Admission Strategy</div>
+        <div class="elite-chip">1–3개월 · 입시 완성 과정</div>
+      </div>
+    </div>
+    <div class="elite-bd">
+      <div class="col-ttl">Focus</div>
+      <ul class="focus-ul">
+        <li><span class="arrow">▸</span><span><strong>Motivation Letter 개발</strong> — 지원자의 의학적 비전과 스토리를 영어로 구조화하고 설득력 있는 지원 동기서를 완성합니다.</span></li>
+        <li><span class="arrow">▸</span><span><strong>Personal Statement 지도</strong> — 개인의 학업 강점·경험·의학적 목표를 명확하게 전달하는 글쓰기 훈련을 진행합니다.</span></li>
+        <li><span class="arrow">▸</span><span><strong>Medical School Interview 준비</strong> — Why Medicine? Why Hungary? 핵심 질문에 논리적·일관된 답변 구조 완성</span></li>
+        <li><span class="arrow">▸</span><span><strong>Final Admission Strategy</strong> — 입시 컨설팅과 연계하여 지원 전략을 최종 점검하고 합격 가능성을 높입니다.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PATHWAY -->
+  <div class="sec"><span>Student Development Pathway</span></div>
+  <div class="pathway">
+    <div class="pw-step">
+      <div class="pw-dot d1">1</div>
+      <div class="pw-text">
+        <div class="pt">MedBridge 101 — Communication Foundation</div>
+        <div class="ps">영어 말하기 구조 · Academic vocabulary · 기초 의학 표현</div>
+      </div>
+    </div>
+    <div class="pw-arrow">↓</div>
+    <div class="pw-step">
+      <div class="pw-dot d2">2</div>
+      <div class="pw-text">
+        <div class="pt">MedBridge 201 — Scientific Communication</div>
+        <div class="ps">생물·의학 개념 설명 · Scientific discussion · 구조적 답변</div>
+      </div>
+    </div>
+    <div class="pw-arrow">↓</div>
+    <div class="pw-step">
+      <div class="pw-dot d3">3</div>
+      <div class="pw-text">
+        <div class="pt">MedBridge 301 — Oral Exam Preparation</div>
+        <div class="ps">Mock exam · 실전 시뮬레이션 · Follow-up 대응 훈련</div>
+      </div>
+    </div>
+    <div class="pw-arrow">↓</div>
+    <div class="pw-step active">
+      <div class="pw-dot d4">★</div>
+      <div class="pw-text">
+        <div class="pt">MedBridge Elite — Full Admission Strategy</div>
+        <div class="ps">Motivation letter · Interview prep · Final admission strategy</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COURSE OPTIONS -->
+  <div class="sec"><span>Monthly Course Options</span></div>
+  <div class="opt-list">
+    <div class="opt-row">
+      <div class="opt-tier">Standard</div>
+      <div class="opt-vline"></div>
+      <div>
+        <div class="opt-count">월 8회</div>
+        <div class="opt-freq">주 2회 · 학교·직장 병행에 적합한 기본 페이스</div>
+      </div>
+    </div>
+    <div class="opt-row rec">
+      <div class="rec-badge">추천</div>
+      <div class="opt-tier">Accelerated</div>
+      <div class="opt-vline"></div>
+      <div>
+        <div class="opt-count">월 12회</div>
+        <div class="opt-freq">주 3회 · 더 빠른 Stage 진입을 원하는 학생</div>
+      </div>
+    </div>
+    <div class="opt-row">
+      <div class="opt-tier">Intensive</div>
+      <div class="opt-vline"></div>
+      <div>
+        <div class="opt-count">월 16회</div>
+        <div class="opt-freq">주 4회 · 입시 일정이 촉박하거나 집중 몰입을 원하는 학생</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="sec"><span>How It Works</span></div>
+  <div class="how-grid">
+    <div class="how-item">
+      <div class="how-num">01</div>
+      <div class="how-lbl">카카오 문의</div>
+      <div class="how-desc">현재 영어 수준과 입학 일정을 파악합니다</div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">02</div>
+      <div class="how-lbl">50분 무료 체험</div>
+      <div class="how-desc">실제 수업 방식으로 진행 — 단순 상담이 아닙니다</div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">03</div>
+      <div class="how-lbl">맞춤 로드맵</div>
+      <div class="how-desc">입학 시기에 맞춰 101→301 로드맵 설계</div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">04</div>
+      <div class="how-lbl">ZOOM 1:1 수업</div>
+      <div class="how-desc">매주 전담 강사와 실시간으로 진행</div>
+    </div>
+  </div>
+
+  <!-- CTA 1: 카카오톡 -->
+  <div class="cta-kakao">
+    <div class="cta-kakao-inner">
+      <div class="cta-kakao-left">
+        <div class="cta-ey">Speak Medicine. From Day One.</div>
+        <div class="cta-ttl">지금 내 수준에서<br>어디서부터 시작해야 할까요?</div>
+        <p class="cta-sub">카카오톡으로 문의하시면 현재 상황에 맞는<br>시작 단계와 맞춤 커리큘럼을 안내드립니다.</p>
+      </div>
+      <div class="cta-kakao-right">
+        <a class="btn-kakao-lg" href="https://open.kakao.com/o/syKDYYni" target="_blank" rel="noopener">
+          카카오톡으로 수준 진단받기 &nbsp;→
+        </a>
+        <div class="cta-note">응답 후 24시간 이내 맞춤 피드백</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA 2: 무료 체험 -->
+  <div class="cta-trial">
+    <div class="cta-trial-inner">
+      <div class="cta-trial-left">
+        <div class="trial-badge">50-Minute Free Trial</div>
+        <div class="trial-title">상담이 아닌 <em>실제 수업</em>으로<br>먼저 경험해보세요</div>
+        <div class="trial-steps">
+          <div class="trial-step"><span class="ts-num">1</span><span class="ts-text"><strong>Short Interview</strong> — 목표와 현재 상황 파악</span></div>
+          <div class="trial-step"><span class="ts-num">2</span><span class="ts-text"><strong>Speaking Test</strong> — 현재 영어 수준 진단</span></div>
+          <div class="trial-step"><span class="ts-num">3</span><span class="ts-text"><strong>Mini Trial Lesson</strong> — 실제 수업 방식 체험</span></div>
+        </div>
+      </div>
+      <div class="cta-trial-right">
+        <div class="trial-limit">📌 월 <strong>10명 한정</strong> · 첫 세션 무료</div>
+        <a class="btn-trial-lg" href="https://docs.google.com/forms/d/e/1FAIpQLScrFb1WOfgQ02_P_LHLHajRiiI6M7aFgCYo7dc1c6TcsnRLnQ/viewform?usp=header" target="_blank" rel="noopener">
+          무료 체험 수업 신청하기 &nbsp;→
+        </a>
+        <div class="cta-note">50분 · 실제 수업 형식</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-brand">MEDBRIDGE</div>
+  <div class="ft-tag">Your Bridge to Medical School &nbsp;·&nbsp; Think. Speak. Succeed in Medicine.</div>
+</footer>
+
+</body>
+</html>
